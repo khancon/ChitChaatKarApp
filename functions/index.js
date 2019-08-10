@@ -34,7 +34,7 @@ app.get('/chaat/:chaatId/unlike', FBAuth, unlikeChaat);
 app.delete('/chaat/:chaatId', FBAuth, deleteChaat);
 
 exports.api = functions.https.onRequest(app);
-/*
+
 exports.createNotificationOnLike = functions.firestore.document('likes/{id}')
     .onCreate((snapshot) => {
         db.doc(`/chaats/${snapshot.data().chaatId}`).get()
@@ -57,4 +57,4 @@ exports.createNotificationOnLike = functions.firestore.document('likes/{id}')
                 console.error(err);
                 return;
             })
-    }) */
+    }) 
