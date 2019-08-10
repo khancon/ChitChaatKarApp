@@ -17,7 +17,9 @@ const {
     login, 
     uploadImage, 
     addUserDetails, 
-    getAuthenticatedUser 
+    getAuthenticatedUser,
+    getUserDetails,
+    markNotificationsRead
 } = require('./handlers/users')
 
 app.get('/chaats', getAllChaats);
@@ -32,6 +34,8 @@ app.post('/chaat/:chaatId/comment', FBAuth, commentOnChaat);
 app.get('/chaat/:chaatId/like', FBAuth, likeChaat);
 app.get('/chaat/:chaatId/unlike', FBAuth, unlikeChaat);
 app.delete('/chaat/:chaatId', FBAuth, deleteChaat);
+app.get('/user/:handle', getUserDetails);
+app.post('/notifications', FBAuth, markNotificationsRead);
 
 exports.api = functions.https.onRequest(app);
 
