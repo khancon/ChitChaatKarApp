@@ -14,7 +14,8 @@ exports.getAllChaats = (req, res) =>{
                     userHandle: doc.data().userHandle,
                     createdAt: doc.data().createdAt,
                     commentCount: doc.data().commentCount,
-                    likeCount: doc.data().likeCount
+                    likeCount: doc.data().likeCount,
+                    userImage: doc.data().userImage
                 });
             });
             return res.json(chaats);
@@ -82,7 +83,7 @@ exports.getChaat = (req, res) => {
 
 exports.commentOnChaat = (req, res) => {
     if(req.body.body.trim() === ''){
-        return res.status(400).json({error: 'Cannot be empty'});
+        return res.status(400).json({ comment: 'Cannot be empty'});
     }
 
     const newComment = {
