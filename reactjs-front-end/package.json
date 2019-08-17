@@ -28,5 +28,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://us-central1-chitchaatkar-501eb.cloudfunctions.net/api"
 }
