@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 
+import Chaat from '../components/Chaat';
+
 class home extends Component {
     state = {
         chaats: null
@@ -18,7 +20,7 @@ class home extends Component {
     } //4:51:00
     render() {
         let recentChaatsMarkup = this.state.chaats ? (
-            this.state.chaats.map(chaat => <p>{chaat.body}</p>)
+            this.state.chaats.map(chaat => <Chaat chaat={chaat}/>)
         ) : <p>Loading...</p>
         return (
             <Grid container spacing={16}>

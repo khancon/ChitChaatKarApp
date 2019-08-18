@@ -209,7 +209,7 @@ exports.uploadImage = (req, res) => {
         imageFileName =  `${Math.random(Math.random() * 10000)}.${imageExtension}`;
         const filePath = path.join(os.tmpdir(), imageFileName);
         imageToBeUploaded = { filePath, mimeType };
-        file.pipe(fs.createWriteStream(filePath))
+        file.pipe(fs.createWriteStream(filePath));
     });
     busboy.on('finish',()=>{
         admin.storage().bucket().upload(imageToBeUploaded.filePath, {
