@@ -37,7 +37,7 @@ const styles = {
     progress: {
         position: 'absolute'
     }
-}
+};
 
 class login extends Component {
     constructor(){
