@@ -11,7 +11,6 @@ class home extends Component {
     componentDidMount(){
         axios.get('/chaats')
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     chaats: res.data
                 })
@@ -20,10 +19,10 @@ class home extends Component {
     } //4:51:00
     render() {
         let recentChaatsMarkup = this.state.chaats ? (
-            this.state.chaats.map(chaat => <Chaat chaat={chaat}/>)
+            this.state.chaats.map(chaat => <Chaat key={chaat.chaatId} chaat={chaat}/>)
         ) : <p>Loading...</p>
         return (
-            <Grid container spacing={16}>
+            <Grid container spacing={2}>
                 <Grid item sm={8} xs={12}>
                     {recentChaatsMarkup}
                 </Grid>
